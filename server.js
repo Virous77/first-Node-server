@@ -3,13 +3,13 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 
-const shopRoutes = require("./src/routes/shop");
-const adminRoutes = require("./src/routes/admin");
+const shopRoutes = require("./routes/shop");
+const adminRoutes = require("./routes/admin");
 
 const app = express();
 
 app.set("view engine", "pug");
-app.set("views", "./src/views");
+app.set("views", "views");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
