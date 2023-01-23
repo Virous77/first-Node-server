@@ -13,12 +13,6 @@ app.set("views", "./src/views");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("build"));
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "build", "index.html"));
-  });
-}
 app.use(shopRoutes);
 app.use("/admin", adminRoutes.routes);
 app.use(express.static(path.join(__dirname, "public")));
